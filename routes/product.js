@@ -49,17 +49,17 @@ router.delete('/:id', verifyTokenAndAdmin, async (req, res) => {
 	}
 });
 
-// //GET USER
+//GET PRODUCT
 
-// router.get('/find/:id', verifyTokenAndAdmin, async (req, res) => {
-// 	try {
-// 		const user = await User.findById(req.params.id);
-// 		const { password, ...others } = user._doc;
-// 		res.status(200).json(others);
-// 	} catch (err) {
-// 		res.status(500).json(err);
-// 	}
-// });
+router.get('/find/:id', async (req, res) => {
+	try {
+		const product = await Product.findById(req.params.id);
+		const { password, ...others } = user._doc;
+		res.status(200).json(product);
+	} catch (err) {
+		res.status(500).json(err);
+	}
+});
 
 // //GET ALL USER
 
